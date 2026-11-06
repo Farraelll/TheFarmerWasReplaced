@@ -21,5 +21,6 @@ def preparar(semente):
             if get_ground_type() == Grounds.Grassland :
                 till()
             plant(semente)
+            use_item(Items.Water)
             move(North)
         move(East)
