@@ -1,4 +1,11 @@
+clear()
+
+tamanho = get_world_size()
+
 while True:
-    if can_harvest():
-        harvest()
-        move(North)
+    for _ in range(tamanho):
+        for _ in range(tamanho):
+            if can_harvest():
+                harvest()
+            move(North)
+        move(East)
