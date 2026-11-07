@@ -30,5 +30,7 @@ while True:
     replantar_mortas(mortas)
 
     while not can_harvest():
+        if get_entity_type() == Entities.Dead_Pumpkin:
+            plant(Entities.Pumpkin)
         do_a_flip()
     harvest()
