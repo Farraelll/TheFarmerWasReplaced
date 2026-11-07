@@ -1,10 +1,11 @@
-from utils import preparar
+from utils import preparar, semear, tamanho
 
-preparar(Entities.Carrot)
+preparar()
+semear(Entities.Carrot)
 
 while True:
-    for _ in range(get_world_size()):
-        for _ in range(get_world_size()):
+    for _ in range(tamanho):
+        for _ in range(tamanho):
             if can_harvest():
                 harvest()
             plant(Entities.Carrot)
