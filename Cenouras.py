@@ -3,14 +3,18 @@ from utils import preparar, semear, tamanho
 preparar()
 semear(Entities.Carrot)
 
-while True:
-    for _ in range(tamanho):
+def plantar_cenouras():
+    if can_harvest():
+        harvest()
+    plant(Entities.Carrot)
+
+def main():
+    while True:
         for _ in range(tamanho):
-            if can_harvest():
-                harvest()
-            plant(Entities.Carrot)
-            if get_water() < 0.25:
-                use_item(Items.Water)
-            move(North)
-        move(East)
-    
+            for _ in range(tamanho):
+                plantar_cenouras()
+                move(North)
+            move(East)
+
+if __name__ == "__main__":
+    main()
