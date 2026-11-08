@@ -15,11 +15,11 @@ def ir_para(x, y):
         move(direcao)
 
 def preparar():
-    'Ara o terreno e volta para a posição inicial (0, 0)'
-    
+    'Ara o terreno e volta para a posição inicial'
+ 
     for _ in range(tamanho):
         for _ in range(tamanho):
-            if get_ground_type() == Grounds.Grassland :
+            if get_ground_type() != Grounds.Soil:
                 till()
             if can_harvest():
                 harvest()

@@ -23,14 +23,17 @@ def replantar_mortas(mortas):
             else:
                 mortas.remove((x, y))
 
+def main():
+    while True:
+        semear(Entities.Pumpkin)
+        mortas = encontrar_mortas()
+        replantar_mortas(mortas)
 
-while True:
-    semear(Entities.Pumpkin)
-    mortas = encontrar_mortas()
-    replantar_mortas(mortas)
+        while not can_harvest():
+            if get_entity_type() == Entities.Dead_Pumpkin:
+                plant(Entities.Pumpkin)
+            do_a_flip()
+        harvest()
 
-    while not can_harvest():
-        if get_entity_type() == Entities.Dead_Pumpkin:
-            plant(Entities.Pumpkin)
-        do_a_flip()
-    harvest()
+if __name__ == "__main__":
+    main()
